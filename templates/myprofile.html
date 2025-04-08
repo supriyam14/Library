@@ -1,0 +1,36 @@
+{% extends 'studentnavbar.html' %}
+
+{% block content %}
+
+<style>
+    td:first-child{
+        color:#9c48eb;
+        font-family:'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<div class="container shadow-lg mt-5" >
+    <h3 class="text-primary">My profile</h3>
+    <table class="table table-hover">
+        <tr>
+            <td>Name</td>
+            <td>{{ row.name }}</td>
+        </tr>
+
+        <tr>
+            <td>Email</td>
+            <td>{{ row.email }}</td>
+        </tr>
+
+        <tr>
+            <td>USN</td>
+            <td>{{ row.usn }}</td>
+        </tr>
+
+        <tr>
+            <td>Mobno</td>
+            <td>{{ row.mobno }}</td>
+        </tr>
+    </table>
+</div>
+    
+{% endblock content %}

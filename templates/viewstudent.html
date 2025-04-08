@@ -1,0 +1,40 @@
+{% extends "adminnavbar.html" %}
+
+{% block content %}
+
+<div class="container shadow-lg bg-white">
+    <h2>View students form</h2>
+
+    <table class="table">
+        <tr class="bg-info text-white">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Semester</th>
+            <th>Department</th>
+            <th>Mobno</th>
+            <th>Email</th>
+            <th>Password</th>
+            
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+    {% for stu in rows %}
+    <tr>
+        <td>{{stu.id}}</td>
+        <td>{{stu.name}}</td>
+
+        <td>{{stu.semester }}</td>
+        <td>{{stu.dept}}</td>
+        <td>{{stu.mobno }}</td>
+        <td>{{stu.email }}</td>
+        <td>***</td>
+        
+        <td><a href="/delete_book/{{stu.id}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure ??');">Delete</a></td>
+        <td><a href="/edit_book/{{stu.id}}" class="btn btn-sm btn-success">Edit</a></td>
+
+    </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

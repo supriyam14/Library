@@ -1,0 +1,35 @@
+{% extends 'studentnavbar.html' %}
+
+{% block content %}
+
+<div class="container shadow-lg">
+
+    <h3 class="text-primary">Reservation Details..</h3>
+
+    <table class="table">
+        <tr>
+            <th>Slno</th>
+            <th>Book title</th>
+            <th>Book id</th>
+            <th>USN</th>
+            <th>&nbsp;</th>
+        </tr>
+    {% for row in rows %}
+   
+    
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row[0].title }}</td>
+        <td>{{ row[0].bookid }}</td>
+        <td>{{ row[1].usn }}</td>
+        <td>
+            <a href="/cancelreservation/{{ row[0].bookid }},{{ row[1].id }}" class="btn btn-sm btn-danger">Cancel</a>
+        </td>
+    </tr>
+  
+    {% endfor %}
+    
+    </table>
+</div>
+    
+{% endblock content %}

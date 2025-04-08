@@ -1,0 +1,70 @@
+{% extends "adminnavbar.html" %}
+
+{% block content %}
+
+<div class="container bg-success col-md-5">
+    <h2>Edit book form</h2>
+
+    <form name="f1" action="/updatebook.html" method="post">
+
+        <input type="hidden" name="id" value="{{book.id}}" />
+
+        <table class="table">
+            <tbody>
+
+            <tr>
+                <td>
+                    <input type="text" name="bookid" value="{{book.bookid}}" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" name="title" value="{{book.title}}" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" name="author" value="{{book.author}}" required />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="text" name="publisher" value="{{book.publisher}}" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="date" name="published_year" value="{{book.published_year }}" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="number" name="price" value="{{ book.price }}" required />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="submit" value="Update Changes" class="btn btn-primary" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+</div>
+
+{% if msg=="success" %}
+<h2 class="text-center text-success">Book got saved</h2>
+{% else %}
+<h4 class="text-center text-danger">{{ msg }}</h4>
+{% endif %}
+
+{% endblock %}

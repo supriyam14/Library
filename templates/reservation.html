@@ -1,0 +1,51 @@
+{% extends 'adminnavbar.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <h5>Select date</h5>
+
+    <form action="/reservation.html" method="post">
+        <input type="date" name="rdate" required >
+        <button type="submit" class="btn btn-primary">Display</button>
+    </form>
+</div>
+
+<div class="container results bg-info">
+
+    {% if rows %}
+
+    <table class="table">
+        <tr>
+            <th>Slno</th>
+            <th>Book title</th>
+            <th>Author</th>
+            <th>Book id</th>
+            <th>USN</th>
+            <th>Name</th>
+            
+        </tr>
+    {% for row in rows %}
+   
+    
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row[0].title }}</td>
+        <td>{{ row[0].author }}</td>
+        
+        <td>{{ row[0].bookid }}</td>
+        <td>{{ row[1].usn }}</td>
+        <td>{{ row[2].name }}</td>
+        
+    </tr>
+  
+    {% endfor %}
+    
+    </table>
+        
+    {% endif %}
+
+</div>
+{% endblock content %}
+

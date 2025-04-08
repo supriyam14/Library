@@ -1,0 +1,100 @@
+{% extends "adminnavbar.html" %}
+
+{% block content %}
+<style>
+    select,input:not(.submit){
+    width:200px;
+    height:33px;
+    }
+</style>
+<div class="container bg-success col-md-5">
+    <h2>New book form</h2>
+
+    <form name="f1" action="/newstudent.html" method="post">
+
+        <table class="table">
+            <tbody>
+
+            <tr>
+                <td>
+                    <input type="text" name="usn" placeholder="USN" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" name="name" placeholder="name" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <select name="semester">
+                        <option value="#">Select Semester</option>
+                        <option value="1st">1st</option>
+                        <option value="2nd">1st</option>
+                        <option value="3rd">3rd</option>
+                        <option value="4th">4th</option>
+                        <option value="5th">5th</option>
+                        <option value="6th">6th</option>
+                        <option value="7th">7th</option>
+                        <option value="8th">8th</option>
+
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <select name="dept">
+                        <option value="#">Select Department</option>
+                        <option value="CS & E">CS & E</option>
+                        <option value="E & C">E & C</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="EEE">EEE</option>
+
+                    </select>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="text" name="mobno" placeholder="Mobile no" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="email" name="email" placeholder="Email" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="password" name="password" value="password" required />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="submit"  value="Save student" class="submit btn btn-primary" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+</div>
+
+{% if msg=="success" %}
+<h2 class="text-center text-success">Book got saved</h2>
+{% else %}
+<h4 class="text-center text-danger">{{ msg }}</h4>
+{% endif %}
+
+{% endblock %}

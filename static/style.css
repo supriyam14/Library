@@ -1,0 +1,12 @@
+#books h2{
+    color:blue;
+}
+
+div.book{
+    box-shadow: 10px 10px 8px #e97f7f;
+    margin-top:15px;
+    margin-bottom:60px;
+    padding:16px;
+    padding-left:20px;
+    border-left: 2px solid rgb(237, 197, 197);
+}

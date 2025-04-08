@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function f1(){
+        
+            // let x=document.getElementById("t1").value;
+            // //alert(x);
+            // console.log(x);
+
+            // let i=1;
+            // let fact=1;
+            // for(i=1; i<=x; i++)
+            // {
+            //     fact*=i;
+            // }
+            // var msg="Factorial of "+x+" = "+fact;
+
+            // console.log(msg);
+
+            // document.getElementById("res").innerHTML=msg;
+            // document.getElementById("res").style="color:green;";
+        }
+    </script>
+
+</head>
+<body>
+    
+    <input type="text" name="t1" id="t1" placeholder="Enter a number" >
+
+    <button id="b1">Find fact</button>
+
+    <h3 id="res">Result will be displayed here</h3>
+
+    <script src="/jquery-3.6.3.min.js">
+    </script>
+
+    <script>
+
+        $("#b1").click( function(){
+            
+            let N=$("#t1").val();
+            let i=1;
+            let fact=1;
+
+            for(i=1;i<=N; i++)
+            fact*=i;
+            var msg="Factorial of "+N+" = "+fact;
+            $("#res").hide().html(msg).fadeIn(1500).fadeOut(5000);
+        });
+
+    </script>
+</body>
+</html>

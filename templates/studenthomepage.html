@@ -1,0 +1,38 @@
+{% extends 'studentnavbar.html' %}
+
+{% block welcome %}
+    Hi,{{fn}},welcome
+{% endblock welcome %}
+
+
+{% block content %}
+  <div class="container" id="books">
+
+   
+   {% for row  in  records %}
+
+
+     {% if row.status=="available" %}
+      
+    
+     <div class="book">
+      <h2>{{ row.title }}</h2>
+      <p>
+         By- {{ row.author }},{{ row.publisher }}
+      </p>
+      <p style="text-align:right;">
+        <a href="/reserve/{{row.id}},{{row.bookid}}" class="btn btn-primary" >Reserve</a> 
+         
+      </p>
+
+     </div>
+
+     {% endif %}
+   
+   {% endfor %}
+
+   
+    
+{% endblock content %}
+
+

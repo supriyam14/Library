@@ -1,0 +1,9 @@
+  input:not(.submit),select{
+        width:200px;
+        height:33px;
+        }
+
+        body{
+        background-image:url(/static/library.jpg);
+        background-size:cover;
+        }

@@ -1,0 +1,68 @@
+{% extends "adminnavbar.html" %}
+
+{% block content %}
+
+<div class="container bg-success col-md-5">
+    <h2>New book form</h2>
+
+    <form name="f1" action="/newbook.html" method="post">
+
+        <table class="table">
+            <tbody>
+
+            <tr>
+                <td>
+                    <input type="text" name="bookid" placeholder="Book Id" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" name="title" placeholder="Title" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" name="author" placeholder="Author" required />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="text" name="publisher" placeholder="Publisher" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="date" name="published_year"  required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="number" name="price" placeholder="Price" required />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="submit" value="Save book" class="btn btn-primary" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+</div>
+
+{% if msg=="success" %}
+<h2 class="text-center text-success">Book got saved</h2>
+{% else %}
+<h4 class="text-center text-danger">{{ msg }}</h4>
+{% endif %}
+
+{% endblock %}
